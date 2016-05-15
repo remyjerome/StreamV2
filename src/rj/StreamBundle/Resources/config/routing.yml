@@ -1,0 +1,56 @@
+rj_stream_homepage:
+    path:     /
+    defaults: { _controller: rjStreamBundle:Stream:index }
+rj_stream_saison:
+    path:     /saison/{s}
+    defaults: { _controller: rjStreamBundle:Stream:saison }
+    requirements:
+        s:  \d+
+rj_stream_episode:
+    path:     /saison/{s}/episode/{e}
+    defaults: { _controller: rjStreamBundle:Stream:episode}
+    requirements:
+        s:  \d+
+        e:  \d+
+rj_stream_news:
+    path:     /news
+    defaults: { _controller: rjStreamBundle:Stream:news}
+rj_stream_add:
+    path:     /episode/add
+    defaults: { _controller: rjStreamBundle:Stream:create }
+rj_stream_episode_all:
+    path:     /episode/all
+    defaults: { _controller: rjStreamBundle:Stream:episodeall}
+rj_stream_episode_vue:
+    path:     /episode/vue
+    defaults: { _controller: rjStreamBundle:Stream:episodevue}
+rj_stream_episode_note:
+    path:     /episode/note
+    defaults: { _controller: rjStreamBundle:Stream:episodenote}
+rj_stream_episode_last:
+    path:     /episode/last
+    defaults: { _controller: rjStreamBundle:Stream:episodelast}
+rj_stream_episode_notation:
+    path:     /notation/{saison}/{episode}/{note}
+    defaults: { _controller: rjStreamBundle:Stream:notation}
+    requirements:
+        note:  \d+
+        episode: \d+
+        saison: \d+
+    options:
+        expose: true
+#rj_stream_add_news:
+#    path:   /news/add
+#    defaults: { _controller: rjStreamBundle:Stream:addnews }
+rj_stream_news_voirplus:
+    path:   /voirplus/{id}
+    defaults: { _controller: rjStreamBundle:Stream:voirplus }
+    requirements:
+        id: \d+
+#rj_stream_add:
+#   path:     /episode/hebergeur/add
+#   defaults: { _controller: rjStreamBundle:Stream:hebergeur }
+rj_stream_nbepisode:
+    path:     /nbepisode
+    defaults: { _controller: rjStreamBundle:Stream:nbepisode }
+

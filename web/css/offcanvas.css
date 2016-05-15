@@ -1,0 +1,360 @@
+/*
+ * Style tweaks
+ * --------------------------------------------------
+ */
+
+@font-face {
+  font-family: 'Conv_NothingYouCouldDo';
+  src: url('../fonts/NothingYouCouldDo.eot');
+  src: local('☺'), url('../fonts/NothingYouCouldDo.woff') format('woff'), url('../fonts/NothingYouCouldDo.ttf') format('truetype'), url('../fonts/NothingYouCouldDo.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+    font-family: 'game_of_thronesregular';
+    src: url('../fonts/game_of_thrones.eot');
+    src: url('../fonts/game_of_thrones.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/game_of_thrones.woff2') format('woff2'),
+         url('../fonts/game_of_thrones.woff') format('woff'),
+         url('../fonts/game_of_thrones.ttf') format('truetype'),
+         url('../fonts/game_of_thrones.svg#game_of_thronesregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'rokkittregular';
+    src: url('../fonts/rokkitt-regular-webfont.eot');
+    src: url('../fonts/rokkitt-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/rokkitt-regular-webfont.woff2') format('woff2'),
+         url('../fonts/rokkitt-regular-webfont.woff') format('woff'),
+         url('../fonts/rokkitt-regular-webfont.ttf') format('truetype'),
+         url('../fonts/rokkitt-regular-webfont.svg#rokkittregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+html,
+body {
+  overflow-x: hidden; /* Prevent scroll on narrow devices */
+}
+body {
+  padding-top: 70px;
+}
+footer {
+  padding: 30px 0;
+}
+
+a:hover 
+{
+  color : rgba(169, 17, 1, 1);
+}
+.color-red
+{
+  background-color: rgba(169, 17, 1, 1);
+}
+a.thumbnail.active, a.thumbnail:focus, a.thumbnail:hover
+{
+  border-color: rgba(169, 17, 1, 1);
+}
+/*
+ * Off Canvas
+ * -------------------------- 767------------------------
+ */
+@media screen and (max-width: 767px) {
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all .25s ease-out;
+         -o-transition: all .25s ease-out;
+            transition: all .25s ease-out;
+  }
+
+  .row-offcanvas-right {
+    right: 0;
+  }
+
+  .row-offcanvas-left {
+    left: 0;
+  }
+
+  .row-offcanvas-right
+  .sidebar-offcanvas {
+    right: -52%; /* 6 columns */
+  }
+
+  .row-offcanvas-left
+  .sidebar-offcanvas {
+    left: -50%; /* 6 columns */
+  }
+
+  .row-offcanvas-right.active {
+    right: 38%; /* 6 columns */
+  }
+
+  .row-offcanvas-left.active {
+    left: 50%; /* 6 columns */
+  }
+
+  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width: 50%; /* 6 columns */
+  }
+}
+/*
+ * Off Canvas
+ * -------------------------- 768 to 991------------------------
+ */
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all .25s ease-out;
+         -o-transition: all .25s ease-out;
+            transition: all .25s ease-out;
+  }
+
+  .row-offcanvas-right {
+    right: 0;
+  }
+
+  .row-offcanvas-left {
+    left: 0;
+  }
+
+  .row-offcanvas-right
+  .sidebar-offcanvas {
+    right: -65%; /* 6 columns */
+  }
+
+  .row-offcanvas-left
+  .sidebar-offcanvas {
+    left: -50%; /* 6 columns */
+  }
+
+  .row-offcanvas-right.active {
+    right: 50%; /* 6 columns */
+  }
+
+  .row-offcanvas-left.active {
+    left: 50%; /* 6 columns */
+  }
+
+  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width: 50%; /* 6 columns */
+  }
+}
+/********** SAISONS **********/
+/*****************************/
+.image-saison
+{
+    width: 200px;
+    float: left;
+    margin-bottom: 15px;
+    margin-right: 15px;
+    overflow: hidden;
+}
+.titre-saison
+{
+    text-decoration: none;
+    color: #000000;
+    font-size: 1.3em;
+}
+/********** EPISODE **********/
+/*****************************/
+.text-description
+{
+  margin-bottom: 40px;
+}
+/********** SAISONS **********/
+/*****************************/
+.image-saison-left
+{
+    width: 200px;
+    
+}
+.image-saison-right
+{
+    width: 200px;
+}
+.titre-saison
+{
+    text-decoration: none;
+    color: #000000;
+    font-size: 1.3em;
+}
+/********** EPISODE **********/
+/*****************************/
+.text-description
+{
+  margin-bottom: 60px;
+}
+.next
+{
+  font-family: Conv_NothingYouCouldDo, Times, serif;
+  font-size: 1.1em;
+}
+.iframe
+{
+  margin-top:15px; 
+}
+#text-suivant
+{
+  position: absolute;
+  top: 46px;
+  right: 45px;
+}
+#text-precedent
+{
+  position: absolute;
+  top: 25px;
+  left: -10px;
+}
+@media screen and (max-width: 710px) {
+  .next
+  {
+    display: none;
+  }
+  .image-ep-suiv-prec
+  {
+    display: none;
+  }
+  }
+  .lien-episode
+  {
+    text-align: center;
+    text-decoration: none;
+    font-family: Conv_NothingYouCouldDo, Times, serif;
+    margin-top: 15px;
+  }
+  .share-fb
+  {
+    margin-bottom: 15px;
+    margin-left: 15px;
+  }
+  .hid
+  {
+  font-size: 19px;
+  font-weight: 700;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  filter: alpha(opacity=20);
+  opacity: .2;
+  -webkit-appearance: none;
+  cursor: pointer;
+  background: 0 0;
+  border: 0;
+  }
+.hid:hover
+{
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  filter: alpha(opacity=50);
+  opacity: .5;
+}
+.hebergeur
+{
+  position: absolute;
+  right: -150px;
+  top: 390px;
+}
+.note
+{
+  padding: 0;
+}
+.note-plus:hover , .note-moins:hover
+{
+    border: rgba(0, 95, 242,0.5) solid 1.3px;
+}
+.note-plus, .note-moins
+{
+      min-width: 15%;
+      max-width: 85%;
+}
+.description_episode
+{
+  font-size: 1em;
+}
+/*********** HOME ************/
+/*****************************/
+.date
+{
+  margin: 0;
+  color: #000000;
+}
+#badge-ws-episode, #badge-ws-news
+{
+  display: none;
+}
+#badge-ws-episode.active, #badge-ws-news.active
+{
+  display: initial; 
+}
+/********** SLIDER ***********/
+/*****************************/
+#layerslider * 
+{
+  font-family: Lato, 'Open Sans', sans-serif;
+}
+
+.ls-container, .ls-slide, .ls-inner, .ls-lt-container, .ls-bg 
+{
+  -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+  -moz-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+  -ms-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAeABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+  mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+/*********** NEWS ************/
+/*****************************/
+.info-news
+{
+  display: inline;
+  color: rgba(90, 94, 107,1);
+  font-size: 1em;
+  cursor: pointer;
+}
+.info-news:hover
+{
+  color:rgba(90, 94, 107,0.5);
+  border-bottom: 1.4px dotted;
+  cursor: pointer;
+}
+.span
+{
+  color : rgba(169, 17, 1, 1);
+}
+.news-moins
+{
+  display: none;
+  cursor: pointer;
+}
+.news-plus
+{
+  cursor: pointer;
+}
+
+.description-news::first-letter
+{
+  color: rgba(169, 17, 1, 1);
+  font-size: 5.5em; 
+  font-family: game_of_thronesregular, sans-serif;
+  float: left;
+  margin-right: 15px;
+}
+.image-saison.active
+{
+    width: 100%;
+}
+.span-vue
+{
+  background: rgba(239, 239, 239,1);
+  padding: 2px;
+  border-radius: 5px;
+}
+
+

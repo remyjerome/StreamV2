@@ -1,0 +1,77 @@
+{# src/rj/StreamBundle/Resources/views/Stream/index.html.twig #}
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/fontello/fontello.css') }}">
+    <!--[if IE 7]><link rel="stylesheet" href="{{ asset('css/fontello/fontello-ie7.css') }}"><![endif]-->
+    <link rel="stylesheet" href="{{ asset('css/fontello/animation.css') }}">
+{% endblock %}
+
+{% block title %}Home - Game of Thrones{% endblock %}
+
+{% block sidebar %}
+    {{ parent() }}  
+{% endblock %}
+{% block slider %}
+    {{ parent() }} 
+{% endblock %}
+{% block body %}
+	<h2>Dernière news</h2>
+	<div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3 class="panel-title">{{ new.titre }}  <span class="label label-default color-red">New</span></h3>
+                </div>
+
+                <div class="col-xs-12">
+                    <span class="icon-pencil span"><p class="info-news">{{ new.auteur }}</p></span>
+                    <span class="icon-clock-1 span"><p class="info-news">{{ new.date|date("m/d/Y") }}</p></span>
+                    <span class="icon-tag span"><p class="info-news">{{ new.tag1 }}</p><p class="info-news"> - {{ new.tag2 }}</p><p class="info-news"> - {{ new.tag3 }}</p></span>
+                </div>
+            </div>
+        </div>
+        <div id="{{new.id}}" class="panel-body">
+                    <a href="#" id="image-saison-{{new.id}}" class="thumbnail image-saison">
+                        <img  src="{{asset('images/')}}{{new.image}}" alt="image saison episode 1" >
+                    </a>
+                    <p id="description-news-{{new.id}}" class="text-justify description-news">{{ new.description|truncate(450, true, ' ...')|nl2br }}</p>
+                    <div class="col-xs-12 text-center">
+                        <span onclick="newsplus(this,{{new.id}});" id="news-plus-{{new.id}}" class="icon-angle-circled-down span news-plus"></span>
+                        <span onclick="newsmoins(this,{{new.id}});"  id="news-moins-{{new.id}}" class="icon-angle-circled-up span news-moins"></span>
+                    </div>
+        </div>
+    </div>
+    <h2>Dernier episode</h2>
+    <div class="panel panel-default">
+            <div class="panel-heading">
+                    <a href="{{ path('rj_stream_saison', { 's': episode.saison }) }}" class="titre-saison">Saison {{episode.saison}}</a>
+                    <span class="glyphicon glyphicon-triangle-right span" aria-hidden="true"></span>
+                    <a href="{{ path('rj_stream_episode', { 's': episode.saison , 'e' : episode.episode}) }}" class="titre-saison">Episode {{episode.episode}} : {{episode.titre}}</a>
+                    <div class="col-xs-1 pull-right text-center span-vue">
+                        <span class="glyphicon glyphicon-eye-open span span-vue"> {{episode.vue}}</span>
+
+                    </div>
+                    
+            </div>
+            <div class="panel-body">
+                <a href="#" class="thumbnail image-saison">
+                    <img src="{{asset('images/got.jpg')}}" alt="image saison {{episode.saison}} episode {{episode.episode}}" >
+                </a>
+                <p>
+                    Bientôt la description.
+                </p>
+                <div class="pull-right">
+                    <a href="{{path('rj_stream_episode', { 's': episode.saison,'e' : episode.episode}) }}" class="btn btn-default">Play <span class="glyphicon glyphicon-play-circle span"></span></a>
+                </div>
+            </div>
+        </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }} 
+    <script src="{{asset('js/home.js')}}"></script>
+    <!-- Web storage -->
+    <script src="{{ asset('js/webstorage.js') }}"></script>
+    <script src="{{asset('js/news-plus.js')}}"></script>
+{% endblock %}

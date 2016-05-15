@@ -1,0 +1,46 @@
+{# src/rj/StreamBundle/Resources/views/Saisons/index.html.twig #}
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+{% block title %}
+Saison {{ s }} - Game of Thrones
+{% endblock %}
+{% block sidebar %}
+    {{ parent() }}  
+{% endblock %}
+{% block slider %}
+{% endblock %}
+{% block body %}
+    <h2>Saison {{ s }}</h2>
+    {% for episode in episodes %}
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                    <a href="{{ path('rj_stream_saison', { 's': s }) }}" class="titre-saison">Saison {{episode.saison}}</a>
+                    <span class="glyphicon glyphicon-triangle-right span" aria-hidden="true"></span>
+                    <a href="{{ path('rj_stream_episode', { 's': s , 'e' : episode.episode}) }}" class="titre-saison">Episode {{episode.episode}} : {{episode.titre}}</a>
+                    <div class="col-xs-1 pull-right text-center span-vue">
+                        <span class="glyphicon glyphicon-eye-open span span-vue"> {{episode.vue}}</span>
+
+                    </div>
+            </div>
+            <div class="panel-body">
+                <a href="#" class="thumbnail image-saison">
+                    <img src="{{asset('images/got.jpg')}}" alt="image saison {{s}} episode {{episode.episode}}" >
+                </a>
+                <p>
+                    Bientôt la description.
+                </p>
+                <div class="pull-right">
+                    <a href="{{path('rj_stream_episode', { 's': episode.saison,'e' : episode.episode}) }}" class="btn btn-default">Play <span class="glyphicon glyphicon-play-circle"></span></a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }} 
+    <script src="{{asset('js/saison.js')}}"></script> 
+{% endblock %}
