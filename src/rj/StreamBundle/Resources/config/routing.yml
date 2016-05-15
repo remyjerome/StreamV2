@@ -47,10 +47,11 @@ rj_stream_news_voirplus:
     defaults: { _controller: rjStreamBundle:Stream:voirplus }
     requirements:
         id: \d+
+    options:
+        expose: true
 #rj_stream_add:
 #   path:     /episode/hebergeur/add
 #   defaults: { _controller: rjStreamBundle:Stream:hebergeur }
 rj_stream_nbepisode:
     path:     /nbepisode
     defaults: { _controller: rjStreamBundle:Stream:nbepisode }
-
