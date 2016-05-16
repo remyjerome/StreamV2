@@ -11,3 +11,14 @@ services:
         class: Twig_Extensions_Extension_Text
         tags:
             - { name: twig.extension }
+
+    admin.episode:
+        class: rj\StreamBundle\Admin\EpisodeAdmin
+        arguments: [~, rj\StreamBundle\Entity\Episode, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Stream, label: Episode }
+    admin.news:
+        class: rj\StreamBundle\Admin\NewsAdmin
+        arguments: [~, rj\StreamBundle\Entity\News, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Stream, label: News }

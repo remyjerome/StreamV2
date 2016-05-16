@@ -11,10 +11,10 @@
 {% block title %}Home - Game of Thrones{% endblock %}
 
 {% block sidebar %}
-    {{ parent() }}  
+    {{ parent() }}
 {% endblock %}
 {% block slider %}
-    {{ parent() }} 
+
 {% endblock %}
 {% block body %}
 	<h2>Dernière news</h2>
@@ -53,7 +53,7 @@
                         <span class="glyphicon glyphicon-eye-open span span-vue"> {{episode.vue}}</span>
 
                     </div>
-                    
+
             </div>
             <div class="panel-body">
                 <a href="#" class="thumbnail image-saison">
@@ -69,7 +69,7 @@
         </div>
 {% endblock %}
 {% block javascripts %}
-    {{ parent() }} 
+    {{ parent() }}
     <script src="{{asset('js/home.js')}}"></script>
     <!-- Web storage -->
     <script src="{{ asset('js/webstorage.js') }}"></script>

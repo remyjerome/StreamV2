@@ -18,6 +18,21 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
             new rj\StreamBundle\rjStreamBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
+
+            // The admin requires some twig functions defined in the security
+           // bundle, like is_granted. Register this bundle if it wasn't the case
+           // already.
+
+           // These are the other bundles the SonataAdminBundle relies on
+           new Sonata\CoreBundle\SonataCoreBundle(),
+           new Sonata\BlockBundle\SonataBlockBundle(),
+           new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+
+           // And finally, the storage and SonataAdminBundle
+           new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
+           new Sonata\AdminBundle\SonataAdminBundle(),
+           new rj\UserBundle\rjUserBundle(),
+           new FOS\UserBundle\FOSUserBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
